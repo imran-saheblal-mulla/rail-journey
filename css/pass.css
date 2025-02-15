@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+html,
+body {
+  
+    font-family: 'Ubuntu'!important;
+    overflow-x: hidden;
+
+  }
+
+.navbar{
+    position: absolute;
+    height: 100px;
+    background: #FFFFFF;
+    top: -9px;  
+}
+.print{
+    position: relative;
+    left:23px;
+}
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.stages{
+    position: absolute;
+    top:85px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+  
+}
+.stages p strong{
+padding-right:20px;
+}
+.content{
+    background: #EAEAF5;
+    height:630px;
+    width:1380px;
+    position: relative;
+    top:-15px;
+    display:flex;
+    flex-wrap: wrap;
+}
+.intro {
+    position: absolute;
+width: 600px;
+height: 50px;
+left: 160px;
+top: 80.31px;
+background: #FFFFFF;
+border-radius: 4px;
+}
+.intro p{
+    font-size: 16px;
+line-height: 18px;
+text-align: left;
+position: relative;
+left:40px;
+top:13px;
+}
+.intro img{
+    left:280px;
+    position: relative;
+}
+.form-house{
+    position: absolute;
+width: 600px;
+height: 292px;
+left: 160px;
+top: 190.31px;
+background: #FFFFFF;
+border-radius: 4px;
+}
+.fullname{
+    width:500px;
+    height:40px;
+    position: absolute;
+left: 10%;
+right: 0%;
+top: 65%;
+bottom: 0%;
+border-radius: 4px;
+border: 1px solid #C9D6DF;
+}
+.label-full-name{
+    font-size: 16px;
+line-height: 18px;
+position: relative;
+top:40px;
+left:47px;
+}
+.label-email{
+    font-size: 16px;
+line-height: 18px;
+position: relative;
+top:-30px;
+left:53px;
+}
+.label-phone{
+    font-size: 16px;
+line-height: 18px;
+position: relative;
+top:-30px;
+left:67px;
+}
+.details{
+    display:flex;
+    position: relative;
+    top:150px;
+    left:190px;
+}
+.number{
+    position: relative;  
+    left:320px;
+}
+.email-phone{
+    position: relative;  
+     top:160px;
+left:-17px;
+}
+.email-phone input{
+    border-radius: 4px;
+    border: 1px solid #C9D6DF; 
+    height:40px;
+}
+.phone{
+    position: relative;  
+    left:10px;
+}
+.right-side{
+    background-color: #ffffff;
+    width: 240px;
+    height: 190px;
+    top: 80px;
+    position:relative;
+    left:-10px;
+    text-align: center;
+}
+.row{
+    display:flex;
+}
+.total{
+    font-weight: 500;
+font-size: 23px;
+line-height: 100.23%;
+position: relative;
+top:10px;
+}
+.price{
+position: relative;
+top:1px;
+font-size: 40px;
+font-weight: 900;
+line-height: 100.23%;
+}
+.no{
+    font-size: 17px;
+    line-height: 100.23%;
+}
+.btn{
+    width:170px;
+}
+.rightdown-side{
+    background-color: #ffffff;
+    width: 240px;
+    height: 80px;
+    top: 100px;
+    position:relative;
+    left:-10px;
+}
+#bound{
+    display:flex;
+    justify-content: space-around;
+}
+#partition{
+    position: relative;
+    top:-27px;
+}
+#stop{
+    position: relative;
+    top:-34px;
+    font-size: 13px;
+    width:170px;
+}
+span{
+    text-decoration: underline;
+    color:#518EF8;
+}
+.back{
+    width:85px;
+    height: 40px;
+    border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 4px;
+    top: 310px;
+    position:relative;
+}
+#backlink{
+    display:flex;
+    justify-content: center;
+    color:black;
+    position: relative;
+    top:5px;
+}
+#backlink:hover{
+    text-decoration: none;
+}

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/book.css">
+    <link rel="stylesheet" type="text/css" href="css/queries.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300i,400,400i&display=swap" rel="stylesheet">
+        
+    <title>RailJourney</title>
+</head>
+
+<body>
+    <!-- Header -->
+
+    <header>
+        
+        
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <a class="navbar-brand" href="#">
+                    <img src="asset/images/rail-journey-removebg-preview.png" class="logo" alt="Logo" width="40%">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="book.html">Print ticket</a>
+                        </li>
+                        <div class="btn-nav">
+                      
+                            <div class="dropdown">
+                                <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <img id ="show" src="asset/images/logout-icon.svg" class="logout-icon" alt="icon"> 
+                                </button>
+                                <div class="dropdown-menu" >
+                                    <a href="index.html" id="log-out">Log out</a>
+                               
+                                </div>
+                              </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>  
+    </header>
+
+    <hr></hr>
+
+    <section class="section section-trip">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="choose-trip lg-12 md-6 sm-4 xs-3">  
+                        <form action="index.html">
+                            <div class="form-row" id="form1">
+                                <div class="form-group col-md-2">
+                                    <input type="text" name="blocationgo" class="form-control" id="secondlocation" >
+                                    <span><img src="asset/icons/Group5.svg"  class="image-form"></span>
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <input type="text" name="blocationreturn" class="form-control" value="" id="return">
+                                    <span><img src="asset/icons/Group5.svg"  class="image-form"></span>
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <input name="bdate" class="form-control" id="datepicker2">
+                                    <span><img src="asset/icons/Group6.svg"  class="image-form"></span>
+                                </div>
+                
+                                <div class="form-group col-md-2">
+                                    <input type="text" name="bseat" class="form-control"  id="seat1">
+                                    <span><img src="asset/icons/Vector.svg" id="img_form" class="image-form"></span>
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <input type="text" name="" class="form-control" id="pass2">
+                                    <span><img src="asset/icons/Group.svg" id="pass_img" class="image-form"></span>
+                                </div>
+
+                                <div class="form-group col-md-1">
+                                    <Button class="form-btn-2">Change</Button>
+                                </div>
+                            </div>
+                            <div class="form-row" id="form2">
+                                <div class="form-group col-md-2">
+                                    
+                                    <input type="text" class="form-control" id="inputCity" placeholder="To">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    
+                                    <input type="text" class="form-control" id="inputCity" placeholder="To">
+                                </div>
+                                <div class="form-group col-md-4" id="form-input">
+                                    
+                                    <input type="text" class="form-control" id="inputZip" placeholder="To">
+                                    
+                                    <input type="text" class="form-control" id="inputZip" placeholder="To">
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    
+                                    <input type="text" class="form-control" id="inputCity" placeholder="To">
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <Button class="form-btn-2">Search</Button>
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section> 
+    
+    <section class="section section-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="leftcard">
+                        <div class="image-detail">
+                          <img src="asset/images/Vector.svg"  class="detail-image" alt="DETAIL IMAGE"/><span class="trip" >OUTBOUND</span>
+                        </div>
+                        <div class="leftdate">Tue Jul 2,2019</div> 
+                        <div class="location"><small class="text-muted">Mumbai to Chennai</small></div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                        <!-- <select class="cs-select cs-skin-rotate">
+                                <option value="" disabled selected>Return</option>
+                                
+                                        <div class="middlecard">
+                                                <div class="image-detail">
+                                                  <img src="asset/images/Vector (1).svg" class="detail-image" alt="DETAIL IMAGE" /><span class="trip" >RETURN</span>
+                                                </div>
+                                                <div class="leftdate">Tue Jul 2,2019</div> 
+                                                <div class="location"><small class="text-muted">Kaduna to Lagos</small></div>
+                                            </div>
+                                
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select> -->
+                    <!-- <div class="middlecard">
+                        <div class="image-detail">
+                          <img src="asset/images/Vector (1).svg" class="detail-image" alt="DETAIL IMAGE" /><span class="trip" >RETURN</span>
+                        </div>
+                        <div class="leftdate">Tue Jul 2,2019</div> 
+                        <div class="location"><small class="text-muted">Kaduna to Lagos</small></div>
+                    </div> -->
+                </div>
+
+                <div class="col-md-2">
+                    <div class="rightcard">
+                        <!-- <h1 class="right-heading">Total</h1>
+                        <div class="price">N 4700</div> -->
+                        <div class="number">1 Passenger</div>
+                        <Button class="detail-btn">continue</Button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="level">
+                    <div class="text-right"><small class="text-muted">Economy</small></div>
+                    <div class="text-left"><small class="text-muted">First Class</small></div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-4">
+                        <div class="leftcard">
+                            <div class="departure">
+                                <div class="time">8:30 to 16:00</div>
+                                <div class="form-cont">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1">N 2330</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2">N 2300</label>
+                                    </div>
+                                </div>
+                            </div>
+                             
+                            <div class="location"><small class="text-muted">8h 30mins</small></div>
+
+                            <div class="departure">
+                                    <div class="time">8:30 to 16:00</div>
+                                    <div class="form-cont">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">N 2330</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">N 3300</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                 
+                                <div class="location"><small class="text-muted">8h 30mins</small></div>
+                            </div>
+                        
+                    </div>
+                    <!-- <div class="row">
+                        <div class="level">
+                            <div class="text-right"><small class="text-muted">Standard</small></div>
+                            <div class="text-left"><small class="text-muted">1st class</small></div>
+                        </div>
+                    </div> -->
+                        <!-- <div class="col-md-4">
+                                <div class="leftcard">
+                                    <div class="departure">
+                                        <div class="time">8:30 to 16:00</div>
+                                        <div class="form-cont">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                <label class="form-check-label" for="inlineRadio1">N 2330</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                <label class="form-check-label" for="inlineRadio2">N 2300</label>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                        
+                                    <!-- <div class="location"><small class="text-muted">8h 30mins</small></div>
+                                    <div class="departure">
+                                            <div class="time">8:30 to 16:00</div>
+                                            <div class="form-cont">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                                    <label class="form-check-label" for="inlineRadio1">N 2330</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                                    <label class="form-check-label" for="inlineRadio2">N 2300</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            
+                                        <div class="location"><small class="text-muted">8h 30mins</small></div>
+    
+                                         -->
+                                </div>
+                        </div>
+        
+                        <!-- <div class="col-md-2">
+                            <div class="rightcard">
+                                <h1 class="right-heading">Total</h1>
+                                <div class="price">N 4700</div>
+                                <div class="number">1 Passenger</div>
+                                <Button class="detail-btn">Search</Button>
+                            </div>
+                        </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- Header End -->
+
+    <!-- main -->
+    
+               
+
+            
+
+    
+
+    
+    <!-- Main End -->
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="book.js"></script>
+
+
+        <!-- <script src="script.js"></script> -->
+
+        <script>
+            
+        </script>
+
+
+        
+</body>
+
+</html>

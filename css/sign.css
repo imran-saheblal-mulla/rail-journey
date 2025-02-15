@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+html,
+body {
+    overflow-x: hidden;
+    font-family: 'Ubuntu'!important;
+
+  }
+
+  /* NAV */
+
+  .logo-met {
+      text-align: center;
+  }
+
+  .nav-btn {
+    color: #ffffff;
+    background-color: #2196F3;
+    padding: 05px 35px !important;
+    font-size: 16px !important;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 15px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    border: none;
+  }
+
+  /* SIGNIN FORM */
+
+  .signinupbgd {
+    width: 50%;
+    margin: auto;
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+
+  .signin-or{
+    text-align: center;
+    margin-top: 15px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    
+    
+  }
+
+  .forgot{
+    /* position: absolute; */
+    float: right;
+    margin-bottom: 10px; 
+    color: #518EF8;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.container {
+    display: block;
+    
+    padding-left: 35px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .all-cont {
+      display: flex;
+      padding-left: 50px;
+  }
+  .signin-button1 {
+      display: flex;
+     
+     
+  }
+
+  .social-link{
+    border: 1px solid #C9D6DF;
+    border-radius: 4px;
+    padding: 0 25px;
+  }
+
+  .signin-button2 {
+    display: flex;
+    margin-left: 250px;
+    border: 1px solid #C9D6DF;
+    border-radius: 4px;
+    
+  }
+
+  .signin-google {
+      margin-top: 15px;
+      margin-left: 10px;
+  }
+
+  .signin-facebook {
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+
+
+  /* .google2{
+    height: 69px;
+    position: absolute;
+    top: -14px;
+    left: 10px;
+    width: 25px;
+  }
+  .signin-google{
+    position: absolute;
+    bottom: -5px;
+    right: 40px;
+    color: #000000;
+    font-size: 14px;
+  }
+  .signin-button1{
+    position: absolute;
+    width: 223px;
+    height: 40px;
+    left: 4px;
+    bottom: 24.38%;
+    border: 1px solid #C9D6DF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-top: 40px;
+  }
+  #fb2{
+    height: 39px;
+    width: 25px;
+    margin-left: 10px;
+  
+  }
+  .signin-facebook{
+    position: absolute;
+    bottom: -5px;
+    right: 30px;
+    color: #000000;
+    font-size: 14px;
+  }
+  .signin-button2{
+    position: absolute;
+    width: 223px;
+    height: 40px;
+    right: 44px;
+    bottom: 24.38%;
+    border: 1px solid #C9D6DF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    
+  }
+  .switch-signin{
+    position: relative;
+    top:80px;
+    left:110px;
+   
+  }
+  .switch-signin a{
+    text-decoration: none;
+    color:blue;
+  }
+   */
+  .error{
+    position:relative;
+    color:red;
+    top:100px;
+  }

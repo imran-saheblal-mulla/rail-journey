@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign-in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="row">
+                <div class="col1">
+                    <a class="navbar-brand" href="#">
+                        <img src="asset/images/rail-journey-removebg-preview.png" class="logo" alt="Logo" width="40%">
+                    </a>
+                    <img src="Group.svg" class="static-image" alt="static-image">
+                
+                
+                </div>
+                <div class="col2-signin">
+                    <form id="signinform">
+                        <div class="h2-signin">
+                            <a class="sign-links" href="#"><h2 class="signup-heading">Sign in</h2></a>
+                            <h2 class="sign-change">or</h2>
+                            <a class="sign-links" href="signup.html"><h2 class="signin-heading">Sign up </h2></a>
+                      </div>
+                    <!-- <h2 class="h2-signin">Sign In</h2> -->
+                    
+                    <h2 class="signin-mail">E-MAIL</h2>
+                    <input type="email" name="email" id="login-email" class="email-signin" placeholder="your email goes here" required>
+                    <h2 class="signin-password">PASSWORD</h2>
+                    <input type="password" name="password" id= "login-password" class="password-signin" placeholder="Create your password" required>
+                
+                
+                    <label class="container">Remember log in.
+                            <input type="checkbox" unchecked="checked">
+                            <span class="checkmark"></span>
+                    </label>
+                  <a href="#"><h2 class="forgot">forgot password?</h2></a>
+                
+                    <button class="signup-button">Sign In</button>
+
+                    <p class="signin-or">OR</p>
+                    <a href="https://accounts.google.com/ " target="_blank"><div class="signin-button1"> <img class="google2" src="asset/images/search.svg" alt="top-g">  <p class="signin-google">Sign Up with Google</p></div>
+                    <a href="http://facebook.com" target="_blank"><div class="signin-button2">   <img id= "fb2" src="Facebook.svg" alt="facebook-icon">  <p class="signin-facebook">Sign Up with Facebook</p></div></a>
+                    <p class="switch-signin">Don't have an account?<a  class="remove2" href="signup.html"> <span class="switch-link2">Sign Up</span> </a></p>
+
+                     <p class="error pink-text center-align"></p>
+                </form>
+                    </div>
+                   
+                
+                </div>
+    
+              <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCxg3bTVPkVCMHCmANREUtlZ_Hc-lg5bUg",
+    authDomain: "RailJourney-804b3.firebaseapp.com",
+    databaseURL: "https://RailJourney-804b3.firebaseio.com",
+    projectId: "RailJourney-804b3",
+    
+    appId: "1:554771170726:web:f95b3d446b057119"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // make auth and firestore references
+  const auth=firebase.auth();
+  const db=firebase.firestore();
+
+  // update firestore settings
+//   db.settings ({timestampsInSnapshots:true});
+</script>
+ <script src="auth.js"></script>
+    
+</body>
+</html>
+</body>
+</html>

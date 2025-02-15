@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/queries.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300i,400,400i&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
+    <title>RailJourney</title>
+</head>
+
+<body>
+    <!-- Header -->
+
+    <header>
+        
+        <div class="hero">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                    <a class="navbar-brand" href="#">
+                        <img src="asset/images/rail-journey-removebg-preview.png" class="logo" alt="Logo" width="40%">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                        <ul class="navbar-nav ml-auto d-flex align-items-center">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Print ticket</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="sign_in.html">Create account</a>
+                            </li>
+                        </ul>
+                        <div class="btn-nav ml-3">
+                            <a href="sign_in.html"><button size="sm" class="nav-btn">Sign In</button></a>
+                        </div>
+                    </div>
+                </nav>
+                
+
+                <div class="row">
+                    <div class="col">
+                        <h1 class="hero-text">Online Train ticket booking made easy!</h1>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col">
+                            <p class="hero-paragraph">Find cheap train tickets and pay securedly.</p>
+                        </div>
+                    </div>
+            </div>
+            
+            <div class="container">
+                <div class="choose-trip lg-12 md-6 sm-4 xs-3">
+                    <div class="row dropdown-select">
+                        <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 dropdowns">
+                            <div class="dropdown">
+                                <select id="inputState" onchange="show_return()">
+                                    <option value="On">One-way</option>
+                                    <option value="return">Return</option>
+                                </select>
+                                   
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-2 col-sm-2 col-xs-2 col-md-2 dropdowns">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   <span id="total"></span> Passenger
+                                </button>
+                                <div class="dropdown-box ">
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <div class="row-12 dropdown-block">
+                                            <div class="col-6">
+                                                <h4 class="dropdown-head">Adult(18+)</h4>
+                                            </div>    
+                                            <div class="col-6 dropdown-btn-container">
+                                                <div class="dropdown-btn-block">
+                                                    <button class="decre-btn" id="adult-dec"><img class="decre-img" onclick= "decreaseAdult();" src="asset/images/Decrebtn.svg" /></button>
+                                                
+                                                    <input type="text" id="count-adult" value="1"></input>   
+                                                        
+                                                    <button class="incre-btn" id="adult-inc" ><img class="incre-img" onclick= "increaseAdult();" src="asset/images/Increbtn.svg" /></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div class="row-12 dropdown-block">
+                                            <div class="col-6">
+                                                <h4 class="dropdown-head">Children(0-17)</h4>
+                                            </div>    
+                                            <div class="col-6 dropdown-btn-container">
+                                                <div class="dropdown-btn-block">
+                                                    <button type="button" class="decre-btn" id="child-dec" id="btnincre"><img class="decre-img" onclick= "decreaseChildren();" src="asset/images/Decrebtn.svg" /></button>
+                                                    <input type="text" id="count-child" value="0"></input>    
+                                                        
+                                                    <button class="incre-btn" id="child-inc"><img class="incre-img"onclick= "increaseChildren();" src="asset/images/Increbtn.svg" /></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                             
+                            </div>
+                        </div>
+                    </div>
+                    <form action="book.html" id="form--main">
+                        <div class="form-row" id="form1">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <p class="form-heading">From:</p>
+                                    
+                                    <input type="text"  value="" class="form-control" id="firstlocation">
+                                    <span class="span-img"><img src="asset/icons/Group5.svg"  class="image-form"></span>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    
+                                    <p class="form-heading">To where:</p>
+                                    <input type="text" name="hlocationreturn" value="" class="form-control" id="input-a">
+                                    <span class="span-img"><img src="asset/icons/Group5.svg"  class="image-form"></span>
+                                </div>
+
+                                <div class="form-group col-md-4" id="form-input">
+                                    <p class="form-heading">Departure time:</p>
+                                    <input id="datepicker" class="form-control" value="" class="form-input">
+                                    <span class="span-img"><img src="asset/icons/Group6.svg"  class="image-form"></span>
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <p class="form-heading">Seat class:</p>
+                                    <input type="text" list="seats" name="hseat" class="form-control" value="" id="firstseat" >
+                                    <datalist id="seats">
+                                        <option selected>POSITION</option>
+                                        
+                                        <option>Aisle</option>
+                                        <option>Window</option>
+                                        <option>Any</option>
+                                    </datalist>
+                                    <span class="span-img"><img src="asset/icons/Vector.svg" id="img_form" class="image-form"></span>
+                                </div>
+                    
+                                <div class="form-group col-md-4">
+                                    <Button type="submit" class="form-btn">Search train tickets</Button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row" id="form2">
+                            <div class="formm">
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <p class="form-heading">From:</p>
+                                        <input type="text" name="#" class="form-control" id="input-a">
+                                        <span class="span-img"><img src="asset/icons/Group5.svg"  class="image-form"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <p class="form-heading">To where:</p>
+                                        <input type="text" name="#" class="form-control" id="input-a">
+                                        <span class="span-img"><img src="asset/icons/Group5.svg"  class="image-form"></span>
+                                    </div>
+
+                                    <div class="form-group col-md-4" id="form-input">
+                                        <p class="form-heading">Departure time:</p>
+                                        <input id="datepickergo" class="form-control" class="form-input">
+                                        <span class="span-img"><img src="asset/icons/Group6.svg"  class="image-form"></span>
+                                    </div>  
+
+                                    <div class="form-group col-md-4" id="form-input">
+                                        <p class="form-heading">Return time:</p>
+                                        <input id="datepickerreturn" class="form-control" class="form-input">
+                                        <span class="span-img"><img src="asset/icons/Group6.svg"  class="image-form"></span>
+                                    </div> 
+
+                                    <div class="form-group col-md-4">
+                                        <p class="form-heading">Seat class:</p>
+                                        <input type='text' list="seats" class="form-control" id="input-a" >
+                                        
+                                        <datalist id="seats">
+                                            <!-- <div class="postion">POSITION</div> -->
+                                            <option><input type="radio" value="Aisle"></option>
+                                            <option>Window</option>
+                                            <option>Any</option>
+                                        </datalist>
+                                        <span class="span-img"><img src="asset/icons/Vector.svg" id="img_form" class="image-form"></span>
+                                    </div>
+
+                                    <!-- <div class="form-group col-md-4" id="formbtn"> -->
+                                        <Button type="submit" class="form-btn-2">Search train tickets</Button>
+                                    <!-- </div>               -->
+                                </div>
+                            </div> 
+                        </div>
+                          <!-- <div class="form-row" id="form2">
+                                
+                            <div class="formm">
+                                <div class="form-group col-md-3">
+                                    
+                                    <input type="text" name="#" class="form-control" id="inputCity" placeholder="From">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    
+                                    <input type="text"  class="form-control" id="inputCity" placeholder="To">
+                                </div>
+                                <div class="form-group col-md-4" id="form-grp">
+                                    
+                                    <input type="text" class="form-control" id="datepickergo" placeholder="Date of Journey">
+                                    
+                                    <input type="text" class="form-control" id="datepickerreturn" placeholder="Date of Return">
+                                </div>
+                
+                                
+                                <div class="form-group col-md-1">
+                                    <Button class="form-btn-2">Search train tickets</Button>
+                                </div>
+                            </div>    
+                        </div> -->
+                    
+                    </form>       
+                </div>    
+            </div>
+        </div>    
+        
+    </header>
+    <!-- Header End -->
+
+    <!-- main -->
+    <section class="section section-trip">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="trip-header-top mb-lg-5 mb-md-4 mb-sm-4 mb-3">4 easy steps to book your tickets</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="trip-box">
+                        <div class="trip-photo">
+                        <img src="asset/icons/Group 2.svg" class="trip-icon" alt="Trip-Icon">
+                        </div>
+                        <div class="inner-text">
+                        <h1 class="trip-text">REGISTER</h1>
+                        <p class="trip-paragraph">Create an account for free</p>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="col-lg-3 col-md-6">
+                    <div class="trip-box">
+                        <div class="trip-photo">
+                            <img src="asset/icons/Group 2 (1).svg" class="trip-icon" alt="Trip-Icon">
+                        </div>
+                        <div class="inner-text">
+                         <h1 class="trip-text">FIND TRAIN TICKETS</h1>
+                         <p class="trip-paragraph">A selection of train destinations in a <br>few clicks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="trip-box">
+                        <div class="trip-photo">
+                            <img src="asset/icons/Group 2 (2).svg" class="trip-icon" alt="Trip-Icon">
+                        </div>
+                        <div class="inner-text">
+                            <h1 class="trip-text">BOOK AND PAY</h1>
+                            <p class="trip-paragraph">Choose the cheapest train tickets and <br>pay securedly</p>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="col-lg-3 col-md-6">
+                    <div class="trip-box">
+                        <div class="trip-photo">
+                            <img src="asset/icons/Group 2 (3).svg" class="trip-icon" alt="Trip-Icon">
+                        </div>
+                        <div class="inner-text">
+                            <h1 class="trip-text">GENERATE E-TICKET</h1>
+                            <p class="trip-paragraph">Just like that! Enjoy your trip.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+    <section class="section section-destin">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="trip-header">Top Destinations to choose from</h1>
+                </div>
+            </div>
+            <div class="top-card">
+                <div class="row">
+                    <div class="col-6 top-all">
+                        <div class="top-body">
+                            <p class="dest-detail"><small class="text-muted">Chennai to Dindigul</small></p>
+                        <div class="dest-inner">     
+                            <p class="card-text"><small class="text-muted">Economy/First class</small></p>
+                            <p class="dest-amt">₹500/₹800</p>
+                        </div>
+                        <div class="top-btn">
+                                <Button size="sm" class="dest-btn" id="top-btn">Book Now</Button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vl"></div>
+                    <div class="col-6 top-all">
+                        <div class="top-body">
+                            <div class="top-detail">
+                            <p class="dest-detail"><small class="text-muted">Chennai to Delhi </small></p>
+                            </div>
+                        <div class="dest-inner">     
+                            <p class="card-text"><small class="text-muted">Economy/First class</small></p>
+                            <p class="dest-amt">₹1,250/₹2,000</p>
+                        </div>
+                        <div class="top-btn">
+                            <Button size="sm" class="dest-btn">Book Now</Button>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    <div class="col-6 top-all">
+                        <div class="top-body">
+                                <div class="top-detail">
+                                    <p class="dest-detail"><small class="text-muted">Delhi to Andhra Pradesh</small></p>
+                                </div>
+                        <div class="dest-inner">     
+                            <p class="card-text"><small class="text-muted">Economy/First class</small></p>
+                            <p class="dest-amt">₹300/₹400</p>
+                        </div>
+                        <div class="top-btn">
+                         <a href=""> <Button  size="sm" class="dest-btn">Book Now</Button></a> 
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="vl"></div>
+                    <div class="col-6 top-all">
+                        <div class="top-body">
+                            <div class="top-detail">
+                                <p class="dest-detail"><small class="text-muted">Madurai to Kanniyakumari</small></p>
+                            </div>
+                        <div class="dest-inner">     
+                            <p class="card-text"><small class="text-muted">Economy/First class</small></p>
+                            <p class="dest-amt">₹1,900/₹3000</p>
+                        </div>
+                        <div class="top-btn">
+                            <Button size="sm" class="dest-btn">Book Now</Button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-6 top-all">
+                        <div class="top-body">
+                                <div class="top-detail">
+                                    <p class="dest-detail"><small class="text-muted">Kanniyakumari to Chennai</small></p>
+                                </div>
+                            <div class="dest-inner">     
+                                <p class="card-text"><small class="text-muted">Economy/First class</small></p>
+                                <p class="dest-amt">₹1,050/₹1,600</p>
+                            </div>
+                            <div class="top-btn">
+                                <Button size="sm" class="dest-btn">Book Now</Button>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="vl"></div>
+                    <div class="col-6 top-all">
+                        <div class="top-body">
+                            <div class="top-detail">
+                                <p class="dest-detail"><small class="text-muted">Mumbai to Chennai</small></p>
+                            </div>
+                        <div class="dest-inner">     
+                            <p class="card-text"><small class="text-muted">Economy/First class</small></p>
+                            <p class="dest-amt">₹2,300/₹3,000</p>
+                        </div>
+                        <div class="top-btn">
+                                <Button size="sm" class="dest-btn">Book Now</Button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-6 top-all">
+                        <div class="top-body">
+                            <div class="top-detail">
+                                <p class="dest-detail"><small class="text-muted">UP to Telugana</small></p>
+                            </div>
+                        <div class="dest-inner">     
+                            <p class="card-text"><small class="text-muted">Economy/First class</small></p>
+                            <p class="dest-amt">₹1,500/₹2,500</p>
+                        </div>
+                        <div class="top-btn">
+                                <Button size="sm" class="dest-btn">Book Now</Button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vl"></div>
+                    <div class="col-6 top-all">
+                        <div class="top-body">
+                            <div class="top-detail">
+                              <p class="dest-detail"><small class="text-muted">Karnataka To Chennai</small></p>
+                            </div>
+                        <div class="dest-inner">     
+                            <p class="card-text"><small class="text-muted">Economy/First class</small></p>
+                            <p class="dest-amt">₹2,900/₹4,500</p>
+                        </div>
+                        <div class="top-btn">
+                                <Button size="sm" class="dest-btn">Book Now</Button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="section section-why">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="trip-header">Why Choose Us?</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="why-box">
+                        <div class="why-photo">
+                            <img src="asset/icons/why1.svg" class="why-icon" alt="Trip-Icon">
+                        </div>
+                        <div class="why-content">
+                            <h1 class="why-text">BOOK AND TRAVEL WITH EASE</h1>
+                            <p class="why-paragraph">Enjoy smooth journeys when you use tickets on your phone to skip <br>station queues.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                        <div class="why-box">
+                            <div class="why-photo">
+                                <img src="asset/icons/why2.svg" class="why-icon" alt="Trip-Icon">
+                            </div>
+                            <div class="why-content">
+                                <h1 class="why-text">FIND THE BEST PRICE FOR YOUR JOURNEY</h1>
+                                <p class="why-paragraph">Find out cheapest tickets exclusively <br>on our website.</p>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                        <div class="why-box">
+                            <div class="why-photo">
+                                <img src="asset/icons/why3.svg" class="why-icon" alt="Trip-Icon">
+                            </div>
+                            <div class="why-content">
+                                <h1 class="why-text">CALL CENTER OPEN 24/7</h1>
+                                <p class="why-paragraph">Just like that! Enjoy your trip.</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <!-- Main End -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container foot">
+            <div class="footer-container">
+                <div class="row">
+                    <div class="col-lg-6 footer-logo">
+                        <img src="asset/images/rail-journey-removebg-preview.png" class="logo-footer" alt="Logo" width="40%">
+                    </div>
+    
+                    <div class="col-lg-6">
+                        <div class="footer-box">
+                            <div class="footer-text mb-md-4 mb-sm-3 mb-3">
+                                <h1 class="footer-heading">Sign Up for Exclusive Offers</h1>
+                                <p class="footer-paragraph">Receive special offers and get notifications on our new releases</p>
+                            </div>
+                            <div class="form-right">
+                                <form class="form-inline">
+                                    <input class="form-control-lg forn-con" type="Your Email" placeholder="Your email " aria-label="Your Email">
+                                    <a class="footer-input" href="#">Join Now</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Copyright section -->
+            <div class="text-center mt-4">
+                <p>Copyright © 2025 - Imran Saheblal Mulla</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Footer End -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+       
+
+             
+        <script src="script.js"></script>
+        
+</body>
+
+</html>

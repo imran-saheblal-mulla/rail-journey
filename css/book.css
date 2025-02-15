@@ -1,0 +1,294 @@
+/* NAV */
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+html,
+body {
+  
+    font-family: 'Ubuntu'!important;
+
+  }
+nav .navbar-nav li a {
+    color: #000000 !important;
+}
+
+#show{
+  background:black;
+}
+
+.nav-link {
+
+    margin-right: 2px;
+    font-size: 14px;
+    margin-top: 15px;
+    /* border-bottom: solid 1px red; */
+  }
+
+  .btn-nav {
+    /* margin-right: 120px; */
+    margin-top: 19px;
+}
+
+.nav-btn {
+  color: #ffffff;
+  background-color: #2196F3;
+  padding: 05px 35px !important;
+  font-size: 16px !important;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 15px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  border: none;
+}
+
+.nav-btn:hover {
+    background-color: #28B446;
+}
+
+/* CHOOSE_TRIP */
+
+.section-trip {
+    background-color: #ffffff; 
+}
+
+.form-control {
+   
+    border-right:1px solid #ced4da;
+      border-left:none !important;
+      border-top: 1px solid #ced4da;
+      border-bottom: 1px solid #ced4da;
+      border-bottom-left-radius: 0px !important;
+      border-top-left-radius: 0px !important;
+}
+
+
+  .dropdown-btn-block {
+    display: flex;
+  }
+
+  
+
+  .dropdown {
+      margin-left: 10px;
+  }
+
+  .decre-btn {
+    width: 0px;
+    margin-right: 40px;
+    
+  }
+
+  button.incre-btn:focus {
+      outline: 0;
+  }
+
+  .incre-btn {
+      border: none;
+      color: transparent;
+      background-color: transparent;
+  }
+
+  button.decre-btn:focus {
+      outline: 0;
+  
+  }
+  
+  
+
+  #form-input {
+    display: flex;
+  }
+
+  #form2 {
+      display: none;
+  }
+
+  .form-control {
+    /* position: absolute; */
+    
+  }
+  .form-group {
+    margin-left: 10px;
+}
+  .image-form {
+    /* margin-top: 10px; */
+    /* padding-left: 10px; */
+    margin-right: 10px;
+    margin-top: -67px;
+    border-right: 1px solid none;
+    border-left: 1px solid #ced4da;
+    border-top: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+    padding: 10px 0px;
+    border-bottom-left-radius: 4px !important;
+    border-top-left-radius: 4px !important;
+    /* position: relative; */
+  }
+
+  .span-img{
+    margin-right: 20px;
+    /* background-color: #52616B; */
+    /* position: absolute; */
+    /* padding-left: 40px; */
+  /* left: 03px; */
+   /* top: 27px; */
+    
+}
+
+  #from-grp {
+      display: flex;
+      margin-left: 07px;
+  }
+  
+  .form-btn {
+    background-color: #2196F3;
+    margin-left: 15px;
+    padding: 3px 28px;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 15px rgba(0, 0, 0, 0.12);
+  }
+
+  .form-btn-2 {
+    background-color: #2196F3;
+  margin-left: 10px;
+  padding: 8px 43px;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 15px rgba(0, 0, 0, 0.12);
+}
+  
+  .form-btn:hover {
+    background-color: #28B446;
+  }
+  
+  .form-input {
+    padding: 6px 42px;
+  }
+
+  
+  
+  
+
+/* DETAIL */
+
+.section-detail {
+  background-color: #EAEAF5;
+  height: 30rem;
+}
+
+.level {
+  display: flex;
+  margin-left: 11rem;
+}
+
+.text-right {
+ 
+}
+
+.text-left {
+  margin-left: 30px;
+}
+
+.leftcard, .middlecard, .rightcard {
+  background-color: #ffffff;
+  width: 350px;
+  height: 120px;
+  margin-top: 20px;
+}
+
+.image-detail {
+  padding-top: 10px;
+  
+}
+
+.leftdate, .image-detail, .location {
+  margin-left: 20px;
+}
+
+.rightcard {
+  text-align: center;
+  height: 12rem;
+}
+
+.detail-btn {
+  color: #ffffff;
+  background-color: #2196F3;
+  padding: 05px 85px !important;
+  font-size: 16px !important;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24), 0px 0px 15px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  border: none;
+  margin-top: 90px;
+}
+
+.right-heading {
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+.number {
+  padding-top: 20px !important;
+}
+
+.price {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+
+.departure {
+  margin-left: 20px;
+  display: flex;
+}
+
+.time {
+
+}
+
+.form-cont{
+  margin-left: 30px;
+}
+
+.form-check {
+  margin-left: 05px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #000000;
+    
+}
+
+.footer-container {
+    padding-top: 40px;
+}
+
+
+.footer-text {
+    color: #ffffff;
+}
+
+.footer-heading {
+    font-size: 25px;
+}
+
+.footer-paragraph {
+    font-size: 12px;
+}
+
+
+
+.form-control-lg{
+    border-radius: 0px !important;
+    width: 22rem; 
+}
+
+.footer-input {
+    border: 1px solid#2196F3;
+    padding: 11px 50px;
+    color: #ffffff;
+    background-color: #2196F3;
+}
+
+/* Just added this to enable me commit */
