@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Management - RailJourney</title>
+    <link rel="stylesheet" href="/admin.css">
+    <style>
+        .train-list {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .train-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .delete-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .delete-btn:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body onload="checkAdminAuth()">
+    <div class="sidebar" id="sidebar">
+        <h2 style="color: white;">Admin Panel</h2>
+        <a href="/admin.html">Home</a>
+        <a href="/admin.html">Dashboard</a>
+        <a href="train.html">Train Management</a>
+        <button onclick="handleAdminLogout()" class="logout-btn">Logout</button>
+    </div>
+
+    <div class="dashboard-content">
+        <h2>Train Management</h2>
+        <div class="train-list" id="trainList"></div>
+    </div>
+
+    <script>
+        function getCookie(name) {
+            const cookies = document.cookie.split('; ');
+            for (let i = 0; i < cookies.length; i++) {
+                const parts = cookies[i].split('=');
+                if (parts[0] === name) {
+                    return decodeURIComponent(parts[1]);
+                }
+            }
+            return null;
+        }
+
+        function checkAdminAuth() {
+            const token = getCookie("TrainadminToken");
+            if (!token) {
+                window.location.href = "/";
+            } else {
+                fetchTrains();
+            }
+        }
+
+        function handleAdminLogout() {
+            document.cookie = "TrainadminName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.cookie = "TrainadminToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            window.location.href = "/";
+        }
+
+        async function fetchTrains() {
+
+            try {
+                const response = await fetch("https://railjourney-db.onrender.com/train", {
+                    headers: {
+                        "Authorization": `Bearer ${getCookie("TrainadminToken")}`
+                    }
+                });
+                const trains = await response.json();
+                console.log(trains)
+                const trainList = document.getElementById("trainList");
+                trainList.innerHTML = "";
+
+                trains.forEach(train => {
+                    const trainItem = document.createElement("div");
+                    trainItem.className = "train-item";
+                    trainItem.innerHTML = `
+                        <span>${train.trainName}</span>
+                        <button class="delete-btn" onclick="confirmDelete('${train.trainName}')">X</button>
+                    `;
+                    trainList.appendChild(trainItem);
+                });
+            } catch (error) {
+                alert("Error fetching train details.");
+            }
+        }
+
+        async function deleteTrain(name) {
+            try {
+                const response = await fetch(`https://railjourney-db.onrender.com/delete/${name}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Authorization": `Bearer ${getCookie("TrainadminToken")}`
+                    }
+                });
+
+                if (response.ok) {
+                    alert("Train deleted successfully.");
+                    fetchTrains();
+                } else {
+                    alert("Failed to delete train.");
+                }
+            } catch (error) {
+                alert("Error deleting train.");
+            }
+        }
+
+        function confirmDelete(name) {
+            if (confirm(`Are you sure you want to delete ${name}?`)) {
+                deleteTrain(name);
+            }
+        }
+    </script>
+</body>
+</html>
