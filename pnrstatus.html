@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/queries.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300i,400,400i&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
+    <title>RailJourney</title>
+    <title>PNR Status Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .info {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>PNR Status Checker</h2>
+        <input type="text" id="pnr" placeholder="Enter PNR Number">
+        <button onclick="checkPNR()">Check Status</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkPNR() {
+            let pnr = document.getElementById("pnr").value;
+            if (pnr === "") {
+                alert("Please enter a PNR number");
+                return;
+            }
+            fetch(`https://irctc1.p.rapidapi.com/api/v3/getPNRStatus?pnr=${pnr}`, {
+                method: "GET",
+                headers: {
+                    "x-rapidapi-host": "irctc1.p.rapidapi.com",
+                    "x-rapidapi-key": "3f6e8e5fabmshd2a445a86d803a7p14cac8jsne94d2925feb0"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status) {
+                    document.getElementById("result").innerHTML = `
+                        <div class='info'><strong>Train:</strong> ${data.data.TrainName} (${data.data.TrainNo})</div>
+                        <div class='info'><strong>From:</strong> ${data.data.From} - <strong>To:</strong> ${data.data.To}</div>
+                        <div class='info'><strong>Class:</strong> ${data.data.Class} | <strong>Quota:</strong> ${data.data.Quota}</div>
+                        <div class='info'><strong>Departure:</strong> ${data.data.DepartureTime} | <strong>Arrival:</strong> ${data.data.ArrivalTime}</div>
+                        <div class='info'><strong>Booking Fare:</strong> ₹${data.data.BookingFare}</div>
+                        <div class='info'><strong>Coach Position:</strong> ${data.data.CoachPosition}</div>
+                        <div class='info'><strong>Chart Prepared:</strong> ${data.data.ChartPrepared ? "Yes" : "No"}</div>
+                    `;
+                } else {
+                    document.getElementById("result").innerHTML = `<div class='info'>Invalid PNR or no data found.</div>`;
+                }
+            })
+            .catch(error => {
+                document.getElementById("result").innerHTML = `<div class='info'>Error fetching data. Try again later.</div>`;
+            });
+        }
+    </script>
+</body>
+</html>
